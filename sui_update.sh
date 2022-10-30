@@ -30,4 +30,4 @@ mv ~/sui/target/release/sui-node /usr/local/bin/
 mv ~/sui/target/release/sui /usr/local/bin/
 wget -O /var/sui/genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
 systemctl restart suid
-rm sui_update.sh
+rm $HOME/sui_update.sh
