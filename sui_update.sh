@@ -15,7 +15,7 @@ if [ -f "$bash_profile" ]; then
 fi
 sleep 1 && curl -s https://raw.githubusercontent.com/cryptology-nodes/main/main/logo.sh | bash && sleep 2
 
-echo -e '\n\e[42mUpgrade software\e[0m\n' && sleep 2
+echo -e '\n\e[42mUpgrade software\e[0m\n' && sleep 1
 systemctl stop suid
 rm -rf /var/sui/db/* /var/sui/genesis.blob $HOME/sui
 source $HOME/.cargo/env
@@ -29,4 +29,5 @@ cargo build -p sui-node -p sui --release
 mv ~/sui/target/release/sui-node /usr/local/bin/
 mv ~/sui/target/release/sui /usr/local/bin/
 wget -O /var/sui/genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
-systemctl restart suid.service
+systemctl restart suid
+echo -e '\n\e[42mUpgrade completed\e[0m\n' && sleep 1
