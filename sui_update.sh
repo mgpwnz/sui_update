@@ -22,10 +22,12 @@ source $HOME/.cargo/env
 cd $HOME
 git clone https://github.com/MystenLabs/sui.git
 cd sui
-git remote add upstream https://github.com/MystenLabs/sui
-git fetch upstream
-git checkout -B devnet --track upstream/devnet
-cargo build -p sui-node -p sui --release
+#git remote add upstream https://github.com/MystenLabs/sui
+#git fetch upstream
+#git checkout -B devnet --track upstream/devnet
+git checkout devnet-0.22.1
+#cargo build -p sui-node -p sui --release
+cargo build --bin sui-node --bin sui --release
 mv ~/sui/target/release/sui-node /usr/local/bin/
 mv ~/sui/target/release/sui /usr/local/bin/
 wget -O /var/sui/genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
