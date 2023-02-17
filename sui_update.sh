@@ -25,7 +25,7 @@ cd sui
 #git remote add upstream https://github.com/MystenLabs/sui
 #git fetch upstream
 #git checkout -B devnet --track upstream/devnet
-git checkout devnet-0.24.0
+git checkout devnet-0.26.1
 #cargo build -p sui-node -p sui --release
 cargo build --bin sui-node --bin sui --release
 mv ~/sui/target/release/sui-node /usr/local/bin/
